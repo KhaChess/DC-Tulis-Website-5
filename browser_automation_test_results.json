@@ -13,36 +13,36 @@
       "success": true,
       "message": "API is accessible - Status: 200",
       "response_data": null,
-      "timestamp": "2025-10-18T06:31:35.729445"
+      "timestamp": "2025-10-18T06:32:12.130375"
     },
     {
       "test": "Browser Automation Session Creation",
       "success": true,
-      "message": "Session created successfully with ID: e8303d68-32e8-444b-9b34-56a4e2131bf4",
+      "message": "Session created successfully with ID: 48dc7b34-99bc-4c95-8792-431ed011c08b",
       "response_data": null,
-      "timestamp": "2025-10-18T06:31:36.772783"
+      "timestamp": "2025-10-18T06:32:13.167449"
     },
     {
       "test": "Session Status Transitions",
       "success": false,
-      "message": "Session error: BrowserType.launch: Executable doesn't exist at /root/.cache/ms-playwright/chromium-1187/chrome-linux/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     playwright install                                     \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+      "message": "Session error: BrowserType.launch: Target page, context or browser has been closed\nBrowser logs:\n\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like you launched a headed browser without having a XServer running.                     \u2551\n\u2551 Set either 'headless: true' or use 'xvfb-run <your-playwright-app>' before running Playwright. \u2551\n\u2551                                                                                                \u2551\n\u2551 <3 Playwright Team                                                                             \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d\nCall log:\n  - <launching> /root/.cache/ms-playwright/chromium-1187/chrome-linux/chrome --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-extensions --disable-features=AcceptCHFrame,AvoidUnnecessaryBeforeUnloadCheckSync,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --enable-automation --no-sandbox --no-sandbox --disable-setuid-sandbox --disable-dev-shm-usage --disable-blink-features=AutomationControlled --user-data-dir=/tmp/playwright_chromiumdev_profile-gHmk1N --remote-debugging-pipe --no-startup-window\n  - <launched> pid=2130\n  - [pid=2130][err] [2130:2144:1018/063214.037893:ERROR:dbus/bus.cc:408] Failed to connect to the bus: Failed to connect to socket /run/dbus/system_bus_socket: No such file or directory\n  - [pid=2130][err] [2130:2130:1018/063214.078760:ERROR:ui/ozone/platform/x11/ozone_platform_x11.cc:249] Missing X server or $DISPLAY\n  - [pid=2130][err] [2130:2130:1018/063214.078781:ERROR:ui/aura/env.cc:257] The platform failed to initialize.  Exiting.\n  - [pid=2130] <gracefully close start>\n  - [pid=2130] <kill>\n  - [pid=2130] <will force kill>\n  - [pid=2130] <process did exit: exitCode=1, signal=null>\n  - [pid=2130] starting temporary directories cleanup\n  - [pid=2130] finished temporary directories cleanup\n  - [pid=2130] <gracefully close end>\n",
       "response_data": null,
-      "timestamp": "2025-10-18T06:31:37.831763"
+      "timestamp": "2025-10-18T06:32:14.203093"
     },
     {
       "test": "Session Error Handling",
       "success": true,
       "message": "Session state management working correctly",
       "response_data": null,
-      "timestamp": "2025-10-18T06:31:38.934738"
+      "timestamp": "2025-10-18T06:32:15.313049"
     },
     {
       "test": "WebSocket Real-time Updates",
       "success": true,
       "message": "No immediate updates (expected for idle session)",
       "response_data": null,
-      "timestamp": "2025-10-18T06:31:44.988700"
+      "timestamp": "2025-10-18T06:32:21.367715"
     }
   ],
-  "timestamp": "2025-10-18T06:31:46.050832"
+  "timestamp": "2025-10-18T06:32:22.428207"
 }
