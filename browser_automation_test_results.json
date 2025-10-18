@@ -2,10 +2,10 @@
   "test_focus": "Browser Automation Session Creation",
   "issue_tested": "Failed to start browser automation session",
   "summary": {
-    "total_passed": 5,
+    "total_passed": 3,
     "total_tests": 5,
-    "success_rate": 1.0,
-    "status": "FIXED"
+    "success_rate": 0.6,
+    "status": "ISSUES_REMAIN"
   },
   "test_results": [
     {
@@ -13,36 +13,36 @@
       "success": true,
       "message": "API is accessible - Status: 200",
       "response_data": null,
-      "timestamp": "2025-10-02T14:03:02.535858"
+      "timestamp": "2025-10-18T06:29:38.372008"
     },
     {
       "test": "Browser Automation Session Creation",
       "success": true,
-      "message": "Session created successfully with ID: 44aaf8aa-3ba1-4e2d-af8f-c1e789a85669",
+      "message": "Session created successfully with ID: bfaeea25-c034-4b07-b87f-4792f2d214d6",
       "response_data": null,
-      "timestamp": "2025-10-02T14:03:03.580290"
+      "timestamp": "2025-10-18T06:29:39.412659"
     },
     {
       "test": "Session Status Transitions",
-      "success": true,
-      "message": "Successfully transitioned to waiting_for_login. Status history: [{'time': '2025-10-02T14:03:04.677266', 'status': 'starting', 'message': None}, {'time': '2025-10-02T14:03:06.779375', 'status': 'waiting_for_login', 'message': 'Waiting for Discord login...'}]",
+      "success": false,
+      "message": "Session error: BrowserType.launch: Executable doesn't exist at /root/.cache/ms-playwright/chromium-1187/chrome-linux/chrome\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     playwright install                                     \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
       "response_data": null,
-      "timestamp": "2025-10-02T14:03:06.779414"
+      "timestamp": "2025-10-18T06:29:40.450320"
     },
     {
       "test": "Session Error Handling",
       "success": true,
       "message": "Session state management working correctly",
       "response_data": null,
-      "timestamp": "2025-10-02T14:03:08.002966"
+      "timestamp": "2025-10-18T06:29:41.565877"
     },
     {
       "test": "WebSocket Real-time Updates",
-      "success": true,
-      "message": "No immediate updates (expected for idle session)",
+      "success": false,
+      "message": "WebSocket real-time test failed: server rejected WebSocket connection: HTTP 404",
       "response_data": null,
-      "timestamp": "2025-10-02T14:03:14.055221"
+      "timestamp": "2025-10-18T06:29:42.685501"
     }
   ],
-  "timestamp": "2025-10-02T14:03:15.110754"
+  "timestamp": "2025-10-18T06:29:43.740713"
 }
