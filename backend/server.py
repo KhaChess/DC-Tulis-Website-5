@@ -461,6 +461,12 @@ async def websocket_endpoint(websocket: WebSocket, session_id: str):
                         # Remove MongoDB ObjectId to avoid JSON serialization issues
                         if "_id" in session:
                             del session["_id"]
+                        
+                        # Convert datetime objects to ISO format strings for JSON serialization
+                        for key, value in session.items():
+                            if isinstance(value, datetime):
+                                session[key] = value.isoformat()
+                        
                         await manager.broadcast_session_update(session_id, session)
                         
             except WebSocketDisconnect:
