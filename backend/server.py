@@ -327,18 +327,27 @@ async def discord_automation(session_id: str, session_data: AutoTyperSession):
             except Exception:
                 pass
 
-async def send_message_with_typing(page, session_id: str, message: str, typing_delay: int):
+async def send_message_with_typing(page, session_id: str, message: str, typing_delay: int, selector: str = '[data-slate-editor="true"]'):
     """Send message with real-time typing progress"""
     try:
-        # Find and click the message input
-        message_input = await page.wait_for_selector('[data-slate-editor="true"]', timeout=10000)
+        # Find and click the message input with provided selector
+        logger.info(f"Attempting to send message using selector: {selector}")
+        message_input = await page.wait_for_selector(selector, timeout=10000)
+        
+        # Click to focus
         await message_input.click()
+        await asyncio.sleep(0.5)
+        
+        # Clear any existing text
+        await page.keyboard.press('Control+A')
+        await page.keyboard.press('Backspace')
+        await asyncio.sleep(0.3)
 
         # Type with progress updates
         chars_per_update = max(1, len(message) // 10)  # Update 10 times during typing
         
         for i, char in enumerate(message):
-            await page.keyboard.type(char, delay=typing_delay // len(message))
+            await page.keyboard.type(char, delay=max(10, typing_delay // len(message)))
             
             # Update typing progress
             if i % chars_per_update == 0 or i == len(message) - 1:
@@ -349,8 +358,16 @@ async def send_message_with_typing(page, session_id: str, message: str, typing_d
                     'total_chars': len(message)
                 })
 
+        # Wait a bit before sending
+        await asyncio.sleep(0.5)
+        
         # Send the message
         await page.keyboard.press('Enter')
+        
+        # Wait to confirm message was sent
+        await asyncio.sleep(1)
+        
+        logger.info(f"Message sent successfully in session {session_id}")
         return True
 
     except Exception as e:
