@@ -6,7 +6,7 @@ Focused test for search functionality
 import requests
 import json
 
-BASE_URL = "https://web-autotyper-1.preview.emergentagent.com/api"
+BASE_URL = "https://web-autotyper-2.preview.emergentagent.com/api"
 HEADERS = {"Content-Type": "application/json"}
 TEST_CHANNEL_ID = "123456789012345678"
 

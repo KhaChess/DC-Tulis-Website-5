@@ -10,7 +10,7 @@ import json
 import requests
 from datetime import datetime
 
-BASE_URL = "https://web-autotyper-1.preview.emergentagent.com/api"
+BASE_URL = "https://web-autotyper-2.preview.emergentagent.com/api"
 WS_URL = "wss://web-autotyper-1.preview.emergentagent.com/api/ws"
 HEADERS = {"Content-Type": "application/json"}
 
