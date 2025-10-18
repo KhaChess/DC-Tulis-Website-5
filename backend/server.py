@@ -193,16 +193,22 @@ async def discord_automation(session_id: str, session_data: AutoTyperSession):
             # Update session status and notify via WebSocket
             await update_session_status(session_id, {
                 'status': 'waiting_for_login',
-                'current_message': 'Waiting for Discord login...'
+                'current_message': 'Please login to Discord in the browser window that opened...'
             })
             
-            # Wait for user to login
-            login_timeout = 60  # 60 seconds timeout for login
+            # Wait for user to login with extended timeout
+            login_timeout = 300  # 5 minutes timeout for login
             try:
-                await page.wait_for_selector('[data-list-id="channels"]', timeout=login_timeout * 1000)
+                logger.info(f"Waiting for Discord login for session {session_id}...")
+                # Try multiple selectors for Discord interface
+                await page.wait_for_selector('[data-list-id="channels"], [class*="sidebar"], [class*="channelName"]', timeout=login_timeout * 1000)
                 logger.info(f"Discord interface detected for session {session_id}")
-            except Exception:
-                error_msg = "Discord login timeout - please login manually"
+                
+                # Give extra time for Discord to fully load
+                await asyncio.sleep(2)
+            except Exception as e:
+                error_msg = f"Discord login timeout - please login manually within {login_timeout} seconds. Error: {str(e)}"
+                logger.error(f"Login timeout for session {session_id}: {str(e)}")
                 await handle_session_error(session_id, error_msg, can_retry=True)
                 return
 
