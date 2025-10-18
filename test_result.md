@@ -197,11 +197,11 @@ backend:
 
   - task: "Browser Automation Session Creation Fix"
     implemented: true
-    working: true
+    working: "NA"
     file: "server.py"
-    stuck_count: 1
+    stuck_count: 2
     priority: "high"
-    needs_retesting: false
+    needs_retesting: true
     status_history:
       - working: false
         agent: "user"
@@ -212,6 +212,12 @@ backend:
       - working: true
         agent: "testing"
         comment: "✅ BROWSER AUTOMATION ISSUE COMPLETELY RESOLVED: All tests passed (5/5). Session creation working, status transitions from 'starting' → 'waiting_for_login' successful, WebSocket real-time updates functional, browser automation initialization working correctly. Root cause fixed by installing Playwright browsers and configuring PLAYWRIGHT_BROWSERS_PATH environment variable in supervisor. Browser automation now fully operational."
+      - working: false
+        agent: "user"
+        comment: "User reported: 'saya sudah klik start session namun tidak ada pesan yang terkirim' - messages not being sent to Discord after starting session"
+      - working: "NA"
+        agent: "main"
+        comment: "CRITICAL FIX APPLIED: 1) Fixed browser launch - changed from headless=True to headless=False so user can see browser and login to Discord 2) Increased login timeout from 60s to 300s (5 minutes) 3) Added multiple Discord selector fallbacks for message input 4) Enhanced error logging and handling 5) Improved message sending with better typing simulation 6) Re-installed Playwright Chromium browser to /pw-browsers. The main issues were: a) Browser was running headless so user couldn't login b) Discord selectors may have changed c) Browser executable was missing"
 
 frontend:
   - task: "WebSocket Integration Frontend"
