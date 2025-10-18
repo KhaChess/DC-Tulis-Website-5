@@ -291,7 +291,7 @@ async def discord_automation(session_id: str, session_data: AutoTyperSession):
                     'typing_progress': 0.0
                 })
 
-                success = await send_message_with_typing(page, session_id, message, session_data.typing_delay)
+                success = await send_message_with_typing(page, session_id, message, session_data.typing_delay, message_input_selector)
                 
                 if success:
                     # Update success count
