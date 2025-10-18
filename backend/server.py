@@ -216,14 +216,39 @@ async def discord_automation(session_id: str, session_data: AutoTyperSession):
             channel_url = f"https://discord.com/channels/@me/{session_data.channel_id}"
             if session_data.channel_id.startswith('https://discord.com'):
                 channel_url = session_data.channel_id
-
+            
+            logger.info(f"Navigating to channel: {channel_url}")
             await page.goto(channel_url, wait_until='networkidle')
+            
+            # Give Discord time to load
+            await asyncio.sleep(3)
 
-            # Wait for message input to be visible
-            try:
-                await page.wait_for_selector('[data-slate-editor="true"]', timeout=30000)
-            except Exception:
-                error_msg = "Could not find message input - check channel permissions"
+            # Wait for message input to be visible with multiple possible selectors
+            message_input_found = False
+            selectors_to_try = [
+                '[role="textbox"][data-slate-editor="true"]',  # New Discord selector
+                '[data-slate-editor="true"]',  # Old selector
+                'div[class*="slateTextArea"]',  # Alternative selector
+                '[contenteditable="true"][role="textbox"]',  # Generic contenteditable
+                'div[class*="editor"]'  # Fallback
+            ]
+            
+            message_input_selector = None
+            for selector in selectors_to_try:
+                try:
+                    logger.info(f"Trying selector: {selector}")
+                    await page.wait_for_selector(selector, timeout=5000)
+                    message_input_selector = selector
+                    message_input_found = True
+                    logger.info(f"Found message input with selector: {selector}")
+                    break
+                except Exception as e:
+                    logger.warning(f"Selector {selector} not found: {str(e)}")
+                    continue
+            
+            if not message_input_found:
+                error_msg = "Could not find message input - check channel permissions or Discord UI may have changed"
+                logger.error(f"Message input not found for session {session_id}")
                 await handle_session_error(session_id, error_msg, can_retry=True)
                 return
 
