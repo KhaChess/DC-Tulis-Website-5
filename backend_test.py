@@ -15,7 +15,7 @@ from typing import Dict, List, Any
 
 # Configuration
 BASE_URL = "https://web-autotyper-2.preview.emergentagent.com/api"
-WS_URL = "wss://web-autotyper-1.preview.emergentagent.com/api/ws"
+WS_URL = "wss://web-autotyper-2.preview.emergentagent.com/api/ws"
 HEADERS = {"Content-Type": "application/json"}
 
 # Test data for browser automation testing
